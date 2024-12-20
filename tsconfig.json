@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "baseUrl": "./",
+    "target": "es2015",
+    "outDir": "dist",
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "inlineSourceMap": true,
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "types": ["node", "express"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
