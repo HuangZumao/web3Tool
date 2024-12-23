@@ -4,6 +4,19 @@
 // 领水  0x477B8766251C98aD00BE7b2CE64F8a4649003d9C
 import axios from "axios";
 
+/**
+ * const taskKeywords = [ 'Follow',
+ *                       // 用于 Twitter 等关注任务
+ *                       'Visit'
+ *                       // 用于 Instagram 等访问任务
+ *                       ];
+ * // 获取所有包含任务内容的 <p> 元素
+ * const elementsToClick = Array.from(document.querySelectorAll('p')).filter(p => taskKeywords.some(keyword => p.textContent.includes(keyword)) );
+ * // 触发点击事件
+ * elementsToClick.forEach(element => { const event = new MouseEvent('click', { view: window, bubbles: true, cancelable: true }); element.dispatchEvent(event); });
+ *
+ * */
+
 /*
 curl ^"https://faucet.testnet.humanity.org/api/claim^" ^
 -H ^"accept: *!/!*^" ^
@@ -48,7 +61,10 @@ const getClamie = async () => {
       },
     });
     console.log("领取成功");
-
+  } catch (e) {
+    console.log("领取失败");
+    console.log(e);
+  } finally {
     // 随机2-10分钟能领取一次
     setTimeout(
       () => {
@@ -56,8 +72,6 @@ const getClamie = async () => {
       },
       Math.floor(Math.random() * 10 + 2) * 60 * 1000,
     );
-  } catch (e) {
-    console.log(e.response);
   }
 };
 getClamie();
